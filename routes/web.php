@@ -17,11 +17,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('asistentes', AsistenteController::class);
 
-Route::resource('catalogos', CatalogoController::class);
-
-Route::resource('evento-corporativos', EventoCorporativoController::class);
 
 //Route::resource('evento-corporativos', function(){
     //return "HOla"; 
