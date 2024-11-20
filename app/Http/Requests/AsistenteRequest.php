@@ -22,10 +22,9 @@ class AsistenteRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'evento_id' => 'required',
 			'nombre' => 'required|string',
 			'email' => 'required|string',
-			'rol_asistente_id' => 'required',
+			'rol_id' => 'required',
         ];
     }
 }
