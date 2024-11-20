@@ -2,11 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AsistenteController;
-
-use App\Http\Controllers\CatalogoController;
-
-use App\Http\Controllers\EventoCorporativoController;
+use App\Http\Controllers\AsisteneRoleController; 
 
 
 Route::get('/', function () {
@@ -17,7 +13,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::resource('asistene-roles', AsisteneRoleController::class);
 
 //Route::resource('evento-corporativos', function(){
     //return "HOla"; 
