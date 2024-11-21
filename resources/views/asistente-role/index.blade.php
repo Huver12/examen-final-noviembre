@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Asistentes
+    Asistente Roles
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Asistentes') }}
+                                {{ __('Asistente Roles') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('asistentes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('asistente-roles.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -37,25 +37,21 @@
                                         <th>No</th>
                                         
 									<th >Nombre</th>
-									<th >Email</th>
-									<th >Rol Id</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($asistentes as $asistente)
+                                    @foreach ($asistenteRoles as $asistenteRole)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $asistente->nombre }}</td>
-										<td >{{ $asistente->email }}</td>
-										<td >{{ $asistente->rol_id }}</td>
+										<td >{{ $asistenteRole->nombre }}</td>
 
                                             <td>
-                                                <form action="{{ route('asistentes.destroy', $asistente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('asistentes.show', $asistente->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('asistentes.edit', $asistente->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('asistente-roles.destroy', $asistenteRole->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('asistente-roles.show', $asistenteRole->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('asistente-roles.edit', $asistenteRole->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -68,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $asistentes->withQueryString()->links() !!}
+                {!! $asistenteRoles->withQueryString()->links() !!}
             </div>
         </div>
     </div>

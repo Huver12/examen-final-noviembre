@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $updated_at
  * @property $deleted_at
  *
- * @property AsisteneRole $asisteneRole
+ * @property AsistenteRole $asistenteRole
  * @property EventoCorporativosHasAsistente[] $eventoCorporativosHasAsistentes
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -38,9 +38,9 @@ class Asistente extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function asisteneRole()
+    public function asistenteRole()
     {
-        return $this->belongsTo(\App\Models\AsisteneRole::class, 'rol_id', 'id');
+        return $this->belongsTo(\App\Models\AsistenteRole::class, 'rol_id', 'id');
     }
     
     /**

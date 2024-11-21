@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class AsisteneRole
+ * Class AsistenteRole
  *
  * @property $id
  * @property $nombre
@@ -18,11 +18,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class AsisteneRole extends Model
+class AsistenteRole extends Model
 {
     use SoftDeletes;
 
     protected $perPage = 20;
+    public $table = 'asistente_roles';
 
     /**
      * The attributes that are mass assignable.

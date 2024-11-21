@@ -317,14 +317,21 @@ return [
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Asistente',
+                    'text' => 'Asistentes',
                     'url' => 'asistentes',
                     'icon' => 'far fa-fw fa-file',
                     'label' => 4,
                     'label_color' => 'success',
                 ],
                 [
-                    'text' => 'Pendiente',
+                    'text' => 'Rol',
+                    'url' => 'asistentes',
+                    'icon' => 'far fa-fw fa-file',
+                    'label' => 4,
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Tipos Eventos',
                     'url' => 'asistentes',
                     'icon' => 'far fa-fw fa-file',
                     'label' => 4,
