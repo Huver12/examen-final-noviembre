@@ -18,6 +18,10 @@ class AsistenteController extends Controller
     {
         $asistentes = Asistente::paginate();
 
+        // $asistente = Asistente::with('asistenteRole')
+        // ->find(13); 
+        // dd($asistente); 
+
         return view('asistente.index', compact('asistentes'))
             ->with('i', ($request->input('page', 1) - 1) * $asistentes->perPage());
     }

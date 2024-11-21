@@ -6,22 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Asistente
+ * Class EventoCorporativo
  *
  * @property $id
  * @property $nombre
- * @property $email
- * @property $rol_id
+ * @property $descripcion
+ * @property $fecha
+ * @property $tipo_id
+ * @property $tipo_evento_id
  * @property $created_at
  * @property $updated_at
  * @property $deleted_at
  *
- * @property AsistenteRole $asistenteRole
+ * @property EventoCorporativoTipo $eventoCorporativoTipo
  * @property EventoCorporativosHasAsistente[] $eventoCorporativosHasAsistentes
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Asistente extends Model
+class EventoCorporativo extends Model
 {
     use SoftDeletes;
 
@@ -32,15 +34,15 @@ class Asistente extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['nombre', 'email', 'rol_id'];
+    protected $fillable = ['nombre', 'descripcion', 'fecha', 'tipo_id', 'tipo_evento_id'];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function asistenteRole()
+    public function eventoCorporativoTipo()
     {
-        return $this->belongsTo(\App\Models\AsistenteRole::class, 'rol_id',);
+        return $this->belongsTo(\App\Models\EventoCorporativoTipo::class, 'tipo_id', 'id');
     }
     
     /**
@@ -48,7 +50,7 @@ class Asistente extends Model
      */
     public function eventoCorporativosHasAsistentes()
     {
-        return $this->hasMany(\App\Models\EventoCorporativosHasAsistente::class, 'id', 'asistente_id');
+        return $this->hasMany(\App\Models\EventoCorporativosHasAsistente::class, 'id', 'evento_id');
     }
     
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EventoCorporativoRequest extends FormRequest
+class EventoCorporativoTipoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +23,6 @@ class EventoCorporativoRequest extends FormRequest
     {
         return [
 			'nombre' => 'required|string',
-			'descripcion' => 'string',
-			'fecha' => 'required',
-			'tipo_id' => 'required',
-			'tipo_evento_id' => 'required',
         ];
     }
 }
