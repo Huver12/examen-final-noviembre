@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property $descripcion
  * @property $fecha
  * @property $tipo_id
- * @property $tipo_evento_id
  * @property $created_at
  * @property $updated_at
  * @property $deleted_at
@@ -34,7 +33,7 @@ class EventoCorporativo extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['nombre', 'descripcion', 'fecha', 'tipo_id', 'tipo_evento_id'];
+    protected $fillable = ['nombre', 'descripcion', 'fecha', 'tipo_id'];
 
 
     /**

@@ -1,11 +1,13 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
-@section('template_title')
-    {{ $eventoCorporativo->name ?? __('Show') . " " . __('Evento Corporativo') }}
-@endsection
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
 
 @section('content')
-    <section class="content container-fluid">
+<section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -36,14 +38,19 @@
                                     <strong>Tipo Id:</strong>
                                     {{ $eventoCorporativo->tipo_id }}
                                 </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Tipo Evento Id:</strong>
-                                    {{ $eventoCorporativo->tipo_evento_id }}
-                                </div>
 
                     </div>
                 </div>
             </div>
         </div>
     </section>
-@endsection
+@stop
+
+@section('css')
+    {{-- Add here extra stylesheets --}}
+    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+@stop
+
+@section('js')
+    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
+@stop

@@ -35,7 +35,7 @@ class EventoCorporativoTipo extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function eventoCorporativos()
+    public function tipoEvento()
     {
         return $this->hasMany(\App\Models\EventoCorporativo::class, 'id', 'tipo_id');
     }

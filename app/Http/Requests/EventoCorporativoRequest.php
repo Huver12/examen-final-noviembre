@@ -26,7 +26,6 @@ class EventoCorporativoRequest extends FormRequest
 			'descripcion' => 'string',
 			'fecha' => 'required',
 			'tipo_id' => 'required',
-			'tipo_evento_id' => 'required',
         ];
     }
 }

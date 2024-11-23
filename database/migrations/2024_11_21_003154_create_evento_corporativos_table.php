@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('descripcion')->nullable();
             $table->date('fecha');
             $table->unsignedInteger('tipo_id')->index('fk_evento_corporativos_evento_corporativo_tipos1_idx');
-            $table->integer('tipo_evento_id');
             $table->timestamp('created_at')->nullable()->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate()->nullable()->useCurrent();
             $table->softDeletes();

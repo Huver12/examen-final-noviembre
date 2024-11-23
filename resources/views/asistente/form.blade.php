@@ -12,17 +12,17 @@
             {!! $errors->first('email', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-    <label for="rol_id" class="form-label">{{ __('Rol Id') }}</label>
-    <select name="rol_id" class="form-control @error('rol_id') is-invalid @enderror" id="rol_id">
-        <option value="">{{ __('Seleccione un rol') }}</option>
-        @foreach (App\Models\AsistenteRole::all() as $role)
-            <option value="{{ $role->id }}" {{ old('rol_id', $asistente?->rol_id) == $role->id ? 'selected' : '' }}>
-                {{ $role->nombre }}
-            </option>
-        @endforeach
-    </select>
-    {!! $errors->first('rol_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-</div>
+            <label for="rol_id" class="form-label">{{ __('Rol Id') }}</label>
+            <select name="rol_id" class="form-control @error('rol_id') is-invalid @enderror" id="rol_id">
+                <option value="">{{ __('Seleccione un rol') }}</option>
+                @foreach (App\Models\AsistenteRole::all() as $role)
+                    <option value="{{ $role->id }}" {{ old('rol_id', $asistente?->rol_id) == $role->id ? 'selected' : '' }}>
+                        {{ $role->nombre }}
+                    </option>
+                @endforeach
+            </select>
+            {!! $errors->first('rol_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
 
 
     </div>

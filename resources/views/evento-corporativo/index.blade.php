@@ -1,11 +1,13 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
-@section('template_title')
-    Evento Corporativos
-@endsection
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
 
 @section('content')
-    <div class="container-fluid">
+<div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -39,8 +41,7 @@
 									<th >Nombre</th>
 									<th >Descripcion</th>
 									<th >Fecha</th>
-									<th >Tipo Id</th>
-									<th >Tipo Evento Id</th>
+									<th >Tipo</th>
 
                                         <th></th>
                                     </tr>
@@ -53,8 +54,7 @@
 										<td >{{ $eventoCorporativo->nombre }}</td>
 										<td >{{ $eventoCorporativo->descripcion }}</td>
 										<td >{{ $eventoCorporativo->fecha }}</td>
-										<td >{{ $eventoCorporativo->tipo_id }}</td>
-										<td >{{ $eventoCorporativo->tipo_evento_id }}</td>
+										<td >{{ $eventoCorporativo->EventoCorporativoTipo->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('evento-corporativos.destroy', $eventoCorporativo->id) }}" method="POST">
@@ -76,4 +76,13 @@
             </div>
         </div>
     </div>
-@endsection
+@stop
+
+@section('css')
+    {{-- Add here extra stylesheets --}}
+    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+@stop
+
+@section('js')
+    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
+@stop

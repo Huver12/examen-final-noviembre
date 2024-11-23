@@ -17,7 +17,7 @@
             {!! $errors->first('fecha', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-    <label for="tipo_id" class="form-label">{{ __('Tipo Id') }}</label>
+    <label for="tipo_id" class="form-label">{{ __('Tipo') }}</label>
     <select name="tipo_id" class="form-control @error('tipo_id') is-invalid @enderror" id="tipo_id">
         <option value="">{{ __('Seleccione un tipo') }}</option>
         @foreach (App\Models\EventoCorporativoTipo::all() as $tipo)
@@ -28,13 +28,6 @@
     </select>
     {!! $errors->first('tipo_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
 </div>
-
-
-        <div class="form-group mb-2 mb20">
-            <label for="tipo_evento_id" class="form-label">{{ __('Tipo Evento Id') }}</label>
-            <input type="text" name="tipo_evento_id" class="form-control @error('tipo_evento_id') is-invalid @enderror" value="{{ old('tipo_evento_id', $eventoCorporativo?->tipo_evento_id) }}" id="tipo_evento_id" placeholder="Tipo Evento Id">
-            {!! $errors->first('tipo_evento_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
 
     </div>
     <div class="col-md-12 mt20 mt-2">
